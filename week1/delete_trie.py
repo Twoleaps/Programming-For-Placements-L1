@@ -60,13 +60,13 @@ class Trie(object):
                 return pNode.isItFreeNode()
  
         else:
-        index = self._Index(key[level])
+                index = self._Index(key[level])
         if self._deleteHelper(pNode.children[index],\
                 key,level+1,length):
-        del pNode.children[index]
+            del pNode.children[index]
             return (not pNode.leafNode() and \
                     pNode.isItFreeNode())
-    return False
+        return False
  
     def deleteKey(self,key):
         length = len(key)
