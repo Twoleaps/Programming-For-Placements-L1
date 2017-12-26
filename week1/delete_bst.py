@@ -10,6 +10,7 @@ def inorder(root):
         inorder(root.left)
         print root.key,
         inorder(root.right)
+        
 def insert( node, key):
     if node is None:
         return Node(key)
@@ -18,12 +19,14 @@ def insert( node, key):
     else:
         node.right = insert(node.right, key)
     return node
+
 def minValueNode( node):
     current = node
     while(current.left is not None):
         current = current.left 
-    return current 
- def deleteNode(root, key):
+    return current
+
+def deleteNode(root, key):
  if root is None:
     return root 
     if key < root.key:
